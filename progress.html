@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>Progress Bar</title>
+
+    </head>
+    <body>
+        <style>
+            body{
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgb(226, 191, 39);
+            }
+
+            .glass-ctr{
+                width:600px;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+
+            .glass{
+                width: 300px;
+                height: 420px;
+                background-color: whitesmoke;
+                position: absolute;
+                -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+                clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+            }
+
+
+            .wateer-ctr{
+                top: -10;
+                width: 250px;
+                height: 400px;
+                overflow: hidden;
+                background-color: aqua;
+                -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+                clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+                position: relative;
+            }
+
+            .water{
+                width: 400px;
+                height: 800px;
+                background-image: url(c1.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                position: relative;
+                animation: mymove 10s;
+                animation-fill-mode:forwards;
+                z-index: -1;
+            }
+
+            @keyframes mymove {
+                0%{right: 0; top: 400px;}
+                100%{right: 340px; top:-30px;}
+
+            }
+
+        </style>
+
+        <div class="glass-ctr">
+            <div class="glass"></div>
+            <div class="water-ctr">
+                <div class="water"></div>
+            </div>
+        </div>
+
+
+    </body>
+</html>
